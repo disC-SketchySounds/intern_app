@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sketchy_sounds_intern_app/api_menu.dart';
+import 'api_service.dart';
 import 'main_view.dart';
 
-void main() => runApp(const MyApp());
+// void main() => runApp(const MyApp());
+
+Future<void> main() async {
+  runApp(const MyApp());
+
+  // Load settings
+  final prefs = await SharedPreferences.getInstance();
+
+  String? apiLink = await prefs.getString('apiLink');
+  if (apiLink != null) {
+    // Force unwrapping should be safe here
+    APIService.apiUrl = apiLink!;
+  }
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

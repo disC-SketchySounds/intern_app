@@ -8,9 +8,9 @@ import 'package:path_provider/path_provider.dart';
 class APIService {
   static final APIService instance = APIService._();
 
-  static const apiUrl = 'http://192.168.178.23:4242';
+  static String apiUrl = 'http://localhost:4242';
   static const apiVersion = 'v1';
-  static const apiEndpoint = '$apiUrl/api/$apiVersion';
+  static String apiEndpoint = '$apiUrl/api/$apiVersion';
 
   /// private constructor
   APIService._();
