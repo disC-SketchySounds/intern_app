@@ -11,6 +11,7 @@ class MainView extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Spacer(),
           Image.asset(
             'assets/logo.png',
             height: 200,
@@ -86,6 +87,13 @@ class MainView extends StatelessWidget {
                   ),
                 ),
               )),
+        Spacer(),
+        Align(
+          alignment: Alignment.bottomRight,
+            child: IconButton(onPressed: (() {
+              Navigator.pushNamed(context, '/api_menu');
+            }), icon: Icon(Icons.settings, color: Colors.white,))
+        )
         ]),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sketchy_sounds_intern_app/api_menu.dart';
 import 'main_view.dart';
 
 void main() => runApp(const MyApp());
@@ -26,6 +27,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      routes: {
+        '/api_menu': (context) => const ApiMenu(),
+      },
     );
   }
 }
